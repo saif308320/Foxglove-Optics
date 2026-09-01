@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClearView Optics | Independent Opticians, Bristol</title>
+<meta name="description" content="Premium independent opticians on Bristol High Street. Eye tests, designer frames, prescription glasses and contact lenses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--t:#0b5f5a;--t2:#1a9b93;--mist:#eef7f6;--ink:#10221f;--m:#5b6e6b;--line:#d5e6e3;--gold:#b8954a}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Inter,sans-serif;color:var(--ink);background:#fff;line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block;background:#e8f0ef}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:400;line-height:1.12}
+nav{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:18px 5%;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:.3s}
+nav.scrolled{border-bottom-color:var(--line);padding:12px 5%}
+.logo{font-family:"Cormorant Garamond",serif;font-size:1.55rem;color:var(--t)}
+.logo span{display:block;font-family:Inter,sans-serif;font-size:.58rem;letter-spacing:.32em;color:var(--m);margin-top:2px}
+nav ul{display:flex;gap:26px;list-style:none;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+nav ul a:hover{color:var(--t)}
+.ncta{background:var(--t);color:#fff;padding:11px 20px;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase}
+.burger{display:none;background:none;border:0;font-size:1.4rem;cursor:pointer}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr}
+.hero-copy{padding:18vh 8% 8%;display:flex;flex-direction:column;justify-content:center;background:linear-gradient(180deg,#f7fbfb,#fff)}
+.hero-copy .k{letter-spacing:.32em;text-transform:uppercase;font-size:.68rem;color:var(--t2);margin-bottom:18px}
+.hero-copy h1{font-size:clamp(2.8rem,5.5vw,5.2rem);max-width:11ch}
+.hero-copy p{margin:20px 0 32px;color:var(--m);font-weight:300;max-width:40ch;font-size:1.05rem}
+.hero-vis{position:relative;overflow:hidden;background:#0d3d3a}
+.hero-vis img{width:100%;height:100%;min-height:100vh;object-fit:cover;object-position:center}
+.hero-vis .tag{position:absolute;left:28px;bottom:28px;background:#fff;padding:16px 22px;font-size:.78rem}
+.hero-vis .tag strong{display:block;font-family:"Cormorant Garamond",serif;font-size:1.4rem;color:var(--t)}
+.btn{display:inline-block;padding:14px 26px;border:0;cursor:pointer;font-family:inherit;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase}
+.btn-t{background:var(--t);color:#fff}
+.btn-o{background:transparent;border:1px solid var(--t);color:var(--t);margin-left:10px}
+.feat-row{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.feat-row article{padding:32px 28px;border-right:1px solid var(--line)}
+.feat-row strong{display:block;font-family:"Cormorant Garamond",serif;font-size:2rem;color:var(--t)}
+.feat-row span{font-size:.8rem;color:var(--m)}
+section{padding:96px 6%}
+.sec{margin-bottom:40px}
+.sec .k{letter-spacing:.28em;text-transform:uppercase;font-size:.68rem;color:var(--t2)}
+.sec h2{font-size:clamp(2.2rem,4vw,3.4rem);margin-top:10px}
+.sec p{color:var(--m);max-width:52ch;margin-top:12px}
+.look{display:grid;grid-template-columns:1.15fr .85fr;gap:10px;min-height:70vh}
+.look img{width:100%;height:100%;object-fit:cover}
+.look .big{min-height:560px}
+.look-side{display:grid;grid-template-rows:1fr 1fr;gap:10px}
+.look-side img{min-height:270px}
+.svc{display:grid;grid-template-columns:repeat(5,1fr);gap:1px;background:var(--line);margin-top:36px}
+.svc article{background:#fff;padding:32px 22px;min-height:220px}
+.svc h3{font-size:1.55rem;margin-bottom:10px;color:var(--t)}
+.svc p{font-size:.88rem;color:var(--m)}
+.shop-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:28px}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filters button{border:1px solid var(--line);background:#fff;padding:8px 16px;cursor:pointer;font-family:inherit;font-size:.75rem;letter-spacing:.08em;text-transform:uppercase}
+.filters button.on{background:var(--t);color:#fff;border-color:var(--t)}
+.frames{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.frame{background:#fff;border:1px solid var(--line);overflow:hidden;transition:transform .4s}
+.frame:hover{transform:translateY(-8px)}
+.frame img{width:100%;height:280px;object-fit:cover;object-position:center}
+.frame .m{padding:16px 18px}
+.frame h3{font-size:1.35rem}
+.frame .meta{font-size:.75rem;color:var(--m);letter-spacing:.06em;margin:4px 0}
+.frame .pr{color:var(--t);font-weight:600;font-size:1.05rem}
+.lens{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px}
+.lens article{padding:36px 28px;background:var(--mist)}
+.lens h3{font-size:1.7rem;margin-bottom:8px}
+.process{display:grid;grid-template-columns:repeat(4,1fr);counter-reset:s;margin-top:32px}
+.process article{padding:28px 24px 28px 0;border-top:2px solid var(--t)}
+.process article::before{counter-increment:s;content:"0" counter(s);font-family:"Cormorant Garamond",serif;font-size:2rem;color:var(--gold);display:block;margin-bottom:8px}
+.team{display:grid;grid-template-columns:1.3fr .85fr .85fr;gap:12px}
+.who{position:relative;min-height:420px;color:#fff;overflow:hidden}
+.who img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.who .c{position:absolute;left:0;right:0;bottom:0;padding:28px;background:linear-gradient(transparent,rgba(11,31,28,.92))}
+.who h3{font-size:2rem}
+.who .cred{color:#9ee0da;font-size:.78rem;letter-spacing:.08em;margin:4px 0 8px}
+.book{display:grid;grid-template-columns:1fr 1fr;background:var(--t);color:#fff;overflow:hidden}
+.book img{width:100%;height:100%;min-height:520px;object-fit:cover}
+.book form{padding:56px 48px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.book form h2{grid-column:1/-1;font-size:2.6rem}
+.book label{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:#9ee0da}
+.book input,.book select{width:100%;padding:12px;border:0;font-family:inherit}
+.book .full{grid-column:1/-1}
+.ok{display:none;color:#d7f5f2;font-family:"Cormorant Garamond",serif;font-size:1.4rem}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.why article{border-top:1px solid var(--line);padding-top:20px}
+.why h3{font-size:1.6rem;margin-bottom:8px}
+.revs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.rev{border:1px solid var(--line);padding:24px}
+.rev img{width:56px;height:56px;border-radius:50%;object-fit:cover;margin-bottom:12px}
+.rev p{font-family:"Cormorant Garamond",serif;font-size:1.2rem;font-style:italic;margin-bottom:10px}
+.hours{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;background:var(--mist)}
+.hours div{padding:22px 8px;border-right:1px solid var(--line);font-size:.8rem}
+.hours strong{display:block;font-family:"Cormorant Garamond",serif;font-size:1.15rem;color:var(--t)}
+.contact{display:grid;grid-template-columns:.8fr 1.2fr;gap:0;padding:0}
+.info{background:var(--ink);color:#d5e6e3;padding:64px 48px}
+.info a{color:#9ee0da}
+.info h2{color:#fff;font-size:2.4rem;margin:8px 0 18px}
+.map{width:100%;min-height:520px;border:0;filter:grayscale(.4) contrast(1.05)}
+footer{padding:22px 6%;display:flex;justify-content:space-between;font-size:.78rem;color:var(--m);border-top:1px solid var(--line);flex-wrap:wrap;gap:8px}
+.reveal{opacity:0;transform:translateY(18px);transition:.75s}
+.reveal.in{opacity:1;transform:none}
+@media(max-width:980px){
+nav ul,.ncta{display:none}
+nav ul.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:#fff;padding:20px;border-bottom:1px solid var(--line)}
+.burger{display:block}
+.hero,.feat-row,.look,.svc,.frames,.lens,.process,.team,.book,.why,.revs,.hours,.contact,form,.book form{grid-template-columns:1fr}
+.feat-row,.svc,.hours{grid-template-columns:1fr 1fr}
+.frames{grid-template-columns:1fr 1fr}
+.hero-vis img{min-height:50vh}
+.look .big,.who{min-height:320px}
+.btn-o{margin:10px 0 0;display:inline-block}
+.book img{min-height:260px}
+}
+@media(max-width:560px){
+.feat-row,.svc,.frames,.hours,.lens,.process,.revs{grid-template-columns:1fr}
+.hero-copy{padding:120px 6% 8%}
+section{padding:64px 5%}
+.book form,.info{padding:36px 22px}
+.frame img{height:220px}
+}
+</style>
+</head>
+<body>
+<nav id="nav">
+  <a class="logo" href="#home">ClearView Optics<span>BRISTOL HIGH STREET</span></a>
+  <ul id="menu">
+    <li><a href="#collection">Frames</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#lenses">Lenses</a></li>
+    <li><a href="#team">Opticians</a></li>
+    <li><a href="#book">Eye test</a></li>
+    <li><a href="#contact">Visit</a></li>
+  </ul>
+  <a class="ncta" href="#book">Book eye test</a>
+  <button class="burger" id="burger" aria-label="Menu">☰</button>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-copy">
+    <p class="k">Independent opticians · est. 2012</p>
+    <h1>Frames you will actually keep on.</h1>
+    <p>A High Street practice for NHS and private eye tests, prescription glasses, contact lenses and sunglasses. Named optometrists. Glazing downstairs.</p>
+    <div>
+      <a class="btn btn-t" href="#book">Book an eye test</a>
+      <a class="btn btn-o" href="#shop">Shop glasses</a>
+    </div>
+  </div>
+  <div class="hero-vis">
+    <img src="https://images.pexels.com/photos/701877/pexels-photo-701877.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Premium eyeglasses on display" referrerpolicy="no-referrer">
+    <div class="tag"><strong>Harbour acetate</strong>From £89 · in store now</div>
+  </div>
+</header>
+
+<section class="feat-row" style="padding:0">
+  <article><strong>NHS</strong><span>Sight tests if you are eligible</span></article>
+  <article><strong>Same day</strong><span>Many single-vision jobs before 1pm</span></article>
+  <article><strong>2 years</strong><span>Warranty on frames we glaze</span></article>
+  <article><strong>Free</strong><span>Adjustments for the life of the frame</span></article>
+</section>
+
+<section id="collection">
+  <div class="sec">
+    <p class="k">This season on the board</p>
+    <h2>The collection</h2>
+    <p>Large, close photographs of the frames themselves. Come in and try them under proper light.</p>
+  </div>
+  <div class="look">
+    <img class="big reveal" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/947885/pexels-photo-947885.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Wooden round eyeglasses">
+    <div class="look-side">
+      <img class="reveal" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Aviator sunglasses">
+      <img class="reveal" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/343720/pexels-photo-343720.jpeg?auto=compress&cs=tinysrgb&w=900" alt="Silver round sunglasses">
+    </div>
+  </div>
+</section>
+
+<section id="services" style="background:var(--mist)">
+  <div class="sec">
+    <p class="k">The practice</p>
+    <h2>Services</h2>
+  </div>
+  <div class="svc">
+    <article class="reveal"><h3>Eye test</h3><p>Forty minutes with retinal photos. NHS if eligible. Private from £35.</p></article>
+    <article class="reveal"><h3>Prescription glasses</h3><p>Single vision, varifocals, workplace lenses. Glazed in the basement.</p></article>
+    <article class="reveal"><h3>Contact lenses</h3><p>Daily, monthly, astigmatism. Trial packs. No brand we cannot explain.</p></article>
+    <article class="reveal"><h3>Sunglasses</h3><p>Prescription sun and ready-made. Polarised stock on the board.</p></article>
+    <article class="reveal"><h3>Kids’ frames</h3><p>NHS vouchers. Flexible temples. Wednesday clinic with James.</p></article>
+  </div>
+</section>
+
+<section id="shop">
+  <div class="shop-head">
+    <div class="sec" style="margin:0">
+      <p class="k">On the board</p>
+      <h2>Shop frames</h2>
+    </div>
+    <div class="filters" id="ff">
+      <button class="on" data-f="all">All</button>
+      <button data-f="round">Round</button>
+      <button data-f="square">Square</button>
+      <button data-f="aviator">Aviator</button>
+      <button data-f="under100">Under £100</button>
+    </div>
+  </div>
+  <div class="frames" id="fg">
+    <article class="frame" data-s="round" data-p="89"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/701877/pexels-photo-701877.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Round acetate glasses"><div class="m"><h3>Harbour Round</h3><p class="meta">ClearView · acetate</p><p class="pr">£89</p></div></article>
+    <article class="frame" data-s="square" data-p="129"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/5752242/pexels-photo-5752242.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Black square glasses"><div class="m"><h3>Clifton Square</h3><p class="meta">Modo · acetate</p><p class="pr">£129</p></div></article>
+    <article class="frame" data-s="aviator" data-p="110"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/46710/pexels-photo-46710.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Classic aviators"><div class="m"><h3>Avon Aviator</h3><p class="meta">French Connection</p><p class="pr">£110</p></div></article>
+    <article class="frame" data-s="round" data-p="75"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/343720/pexels-photo-343720.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Silver round sunglasses"><div class="m"><h3>Park Street Silver</h3><p class="meta">ClearView · metal</p><p class="pr">£75</p></div></article>
+    <article class="frame" data-s="square" data-p="95"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/39716/pexels-photo-39716.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Black rectangle glasses"><div class="m"><h3>Cabot Rectangle</h3><p class="meta">ClearView · black</p><p class="pr">£95</p></div></article>
+    <article class="frame" data-s="square" data-p="145"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.pexels.com/photos/1362558/pexels-photo-1362558.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Wooden sunglasses with blue lenses"><div class="m"><h3>Hotwells Blue</h3><p class="meta">Modo · sun</p><p class="pr">£145</p></div></article>
+    <article class="frame" data-s="square" data-p="68"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=800&q=80" alt="Browline kids glasses"><div class="m"><h3>Kids Flex Navy</h3><p class="meta">Children · NHS voucher</p><p class="pr">£68</p></div></article>
+    <article class="frame" data-s="round" data-p="119"><img loading="lazy" referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=800&q=80" alt="Round amber sunglasses"><div class="m"><h3>Redland Round</h3><p class="meta">French Connection</p><p class="pr">£119</p></div></article>
+  </div>
+</section>
+
+<section id="lenses" style="background:var(--mist)">
+  <div class="sec">
+    <p class="k">What sits in the frame</p>
+    <h2>Lenses</h2>
+    <p>We will not sell you a coating you do not need. Priya will say so out loud.</p>
+  </div>
+  <div class="lens">
+    <article class="reveal"><h3>Single vision</h3><p style="color:var(--m)">Distance or reading. Often glazed the same afternoon if you are in before 1pm.</p></article>
+    <article class="reveal"><h3>Varifocals</h3><p style="color:var(--m)">Everyday and office corridors. Sit with us until the stairs stop swimming.</p></article>
+    <article class="reveal"><h3>Workplace</h3><p style="color:var(--m)">Screen distance, not driving distance. Useful if you live in a spreadsheet.</p></article>
+  </div>
+</section>
+
+<section id="visit-flow">
+  <div class="sec">
+    <p class="k">From the door to collection</p>
+    <h2>How a visit runs</h2>
+  </div>
+  <div class="process">
+    <article class="reveal"><h3>Book</h3><p style="color:var(--m)">Online or the desk. Text the working day before.</p></article>
+    <article class="reveal"><h3>Exam</h3><p style="color:var(--m)">Forty minutes. Retinal photos on the screen so you see what we see.</p></article>
+    <article class="reveal"><h3>Choose</h3><p style="color:var(--m)">Frames under daylight lamps. Honest if a pair does not suit you.</p></article>
+    <article class="reveal"><h3>Collect</h3><p style="color:var(--m)">Same afternoon or a few days. Adjustments free forever.</p></article>
+  </div>
+</section>
+
+<section id="team">
+  <div class="sec">
+    <p class="k">GOC registered</p>
+    <h2>Our opticians</h2>
+    <p>Named people, not a rota of strangers.</p>
+  </div>
+  <div class="team">
+    <article class="who reveal">
+      <img referrerpolicy="no-referrer" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Aisha Rahman">
+      <div class="c"><h3>Aisha Rahman</h3><p class="cred">BSc MCOptom · GOC 01-28411</p><p>Practice owner. Dry eye and contact lenses. Bristol since 2012.</p></div>
+    </article>
+    <article class="who reveal">
+      <img referrerpolicy="no-referrer" src="https://randomuser.me/api/portraits/men/32.jpg" alt="James Cole">
+      <div class="c"><h3>James Cole</h3><p class="cred">BSc MCOptom · GOC 01-30192</p><p>Children’s clinics, Wednesday afternoons.</p></div>
+    </article>
+    <article class="who reveal">
+      <img referrerpolicy="no-referrer" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Shah">
+      <div class="c"><h3>Priya Shah</h3><p class="cred">FBDO · Dispensing</p><p>Frame fitting. Will say no to a pair that does not work.</p></div>
+    </article>
+  </div>
+</section>
+
+<section class="book" id="book" style="padding:0">
+  <img referrerpolicy="no-referrer" src="https://images.unsplash.com/photo-1483412468200-72182dbbc544?auto=format&fit=crop&w=1200&q=80" alt="Close-up of eyeglasses">
+  <form id="af">
+    <h2>Book an eye test</h2>
+    <p class="full" style="opacity:.85;margin-top:-8px">We confirm by text the working day before. Bring your last prescription if you have it.</p>
+    <div><label>Full name</label><input required></div>
+    <div><label>Phone</label><input type="tel" required></div>
+    <div><label>Email</label><input type="email" required></div>
+    <div><label>Preferred date</label><input type="date" required></div>
+    <div>
+      <label>Time</label>
+      <select required><option value="">Select</option><option>09:00</option><option>10:00</option><option>11:00</option><option>12:00</option><option>14:00</option><option>15:00</option><option>16:00</option></select>
+    </div>
+    <div>
+      <label>Type</label>
+      <select><option>Eye test (NHS if eligible)</option><option>Private eye test</option><option>Contact lens fitting</option><option>Frame adjustment</option></select>
+    </div>
+    <div class="full"><button class="btn" style="background:#fff;color:var(--t)" type="submit">Request appointment</button></div>
+    <p class="ok full" id="ok">Thank you. Reception will confirm by text.</p>
+  </form>
+</section>
+
+<section id="why">
+  <div class="sec"><p class="k">Plain reasons</p><h2>Why this shop</h2></div>
+  <div class="why">
+    <article class="reveal"><h3>Insurance & NHS</h3><p style="color:var(--m)">NHS sight tests and optical vouchers. Bring the card for most UK cash-plans. No extras on an NHS test.</p></article>
+    <article class="reveal"><h3>Same-day glazing</h3><p style="color:var(--m)">Single-vision jobs often ready the same afternoon. The lab is downstairs, not in another county.</p></article>
+    <article class="reveal"><h3>Two-year warranty</h3><p style="color:var(--m)">Manufacturing faults and a no-fuss repair. Adjustments are always free.</p></article>
+  </div>
+</section>
+
+<section id="reviews" style="background:var(--mist)">
+  <div class="sec"><p class="k">Patients</p><h2>Reviews</h2></div>
+  <div class="revs">
+    <article class="rev reveal"><img referrerpolicy="no-referrer" src="https://randomuser.me/api/portraits/men/22.jpg" alt="Ben"><p>“Seen on time. Glasses Thursday. No upsell on coatings I did not need.”</p><cite>Ben H. · Redland</cite></article>
+    <article class="rev reveal"><img referrerpolicy="no-referrer" src="https://randomuser.me/api/portraits/women/33.jpg" alt="Laura"><p>“Took my seven-year-old. James was patient. Frames stayed on her face.”</p><cite>Laura M. · Bedminster</cite></article>
+    <article class="rev reveal"><img referrerpolicy="no-referrer" src="https://randomuser.me/api/portraits/men/52.jpg" alt="Omar"><p>“Contact lens trial in one visit. High Street prices, not boutique.”</p><cite>Omar F. · Clifton</cite></article>
+    <article class="rev reveal"><img referrerpolicy="no-referrer" src="https://randomuser.me/api/portraits/women/12.jpg" alt="Nia"><p>“Varifocals took a week. Priya adjusted twice, no charge.”</p><cite>Nia P. · Southville</cite></article>
+  </div>
+</section>
+
+<section class="hours" id="hours" style="padding:0">
+  <div><strong>Mon</strong>9:00–17:30</div>
+  <div><strong>Tue</strong>9:00–17:30</div>
+  <div><strong>Wed</strong>9:00–17:30</div>
+  <div><strong>Thu</strong>9:00–17:30</div>
+  <div><strong>Fri</strong>9:00–17:30</div>
+  <div><strong>Sat</strong>9:00–16:00</div>
+  <div><strong>Sun</strong>Closed</div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="info">
+    <p class="k" style="color:#9ee0da">The shop</p>
+    <h2>Find us</h2>
+    <p>56 High Street<br>Bristol BS1 4DJ<br>United Kingdom</p>
+    <p style="margin-top:18px"><a href="tel:+441174960287">+44 117 496 0287</a><br><a href="mailto:desk@clearviewoptics.clinic">desk@clearviewoptics.clinic</a></p>
+    <p style="margin-top:18px">Bus: High Street stop. NCP car park on Queen Charlotte Street.</p>
+  </div>
+  <iframe class="map" title="Practice map" loading="lazy" src="https://maps.google.com/maps?q=56+High+Street+Bristol+BS1+4DJ&z=16&output=embed"></iframe>
+</section>
+<footer>
+  <span>ClearView Optics · GOC registered practice</span>
+  <span>© 2026 Bristol</span>
+</footer>
+<script>
+const nav=document.getElementById('nav');
+onscroll=()=>nav.classList.toggle('scrolled',scrollY>20);
+document.getElementById('burger').onclick=()=>document.getElementById('menu').classList.toggle('open');
+document.querySelectorAll('#ff button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#ff button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  document.querySelectorAll('#fg .frame').forEach(c=>{
+    const f=b.dataset.f; c.style.display=(f==='all'||c.dataset.s===f||(f==='under100'&&+c.dataset.p<100))?'':'none';
+  });
+});
+document.getElementById('af').onsubmit=e=>{e.preventDefault();document.getElementById('ok').style.display='block'};
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
